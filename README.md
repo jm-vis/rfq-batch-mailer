@@ -2,8 +2,11 @@
 
 # jmvis-rfq-batch-mailer
 
+[![Release](https://img.shields.io/github/v/release/jm-vis/jmvis-rfq-batch-mailer?display_name=tag)](https://github.com/jm-vis/jmvis-rfq-batch-mailer/releases)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/jm-vis/jmvis-rfq-batch-mailer/blob/main/LICENSE)
+
 Built and maintained by [VISCONSULT](https://vis-consult.eu), a consultancy in Germany that
-applies AI in procurement, supply chain and operations. MIT licensed, Python.
+applies AI in procurement, supply chain and operations. MIT licensed, Python, one script.
 
 Send personalized RFQ emails with two attachments:
 - A personalized cover letter (DOCX per recipient, converted to PDF)
@@ -159,23 +162,29 @@ python ./mass_mail.py --retry-from-log send_log_YYYYmmdd_HHMMSS.csv --docx ./cov
 * Missing attachments: check file paths and names
 * Hidden logo: mail client may block images by default
 
-## Clone or fork
+## What it does not do / Known gaps
 
-[![Stars](https://img.shields.io/github/stars/jm-vis/jmvis-rfq-batch-mailer?style=flat)](https://github.com/jm-vis/jmvis-rfq-batch-mailer/stargazers)
-[![Release](https://img.shields.io/github/v/release/jm-vis/jmvis-rfq-batch-mailer?display_name=tag)](https://github.com/jm-vis/jmvis-rfq-batch-mailer/releases)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/jm-vis/jmvis-rfq-batch-mailer/blob/main/LICENSE)
+- **One script, no test suite.** `mass_mail.py` is about 400 lines; there are no automated
+  tests and no CI yet. Use the dry run and the `.eml` preview before every real send.
+- **PDF conversion needs an office program.** On Windows and macOS `docx2pdf` drives
+  Microsoft Word; on Linux it is LibreOffice. If the conversion fails, the script attaches
+  the DOCX instead and does not stop, so check the preview for `Cover letter: ….pdf`.
+- **No bounce handling.** The log records what the SMTP server accepted; bounces arrive in
+  your mailbox later and are not read back.
+- **Rate control is a pause, not a quota.** `SLEEP_SECONDS` spaces the sends; the limits of
+  your mail provider still apply.
 
-### Clone
-```bash
-git clone https://github.com/jm-vis/jmvis-rfq-batch-mailer.git
-cd jmvis-rfq-batch-mailer
-```
+## About
 
-### Fork
-Use the **Fork** button on GitHub, or via the GitHub CLI:
-```bash
-gh repo fork jm-vis/jmvis-rfq-batch-mailer --clone
-cd jmvis-rfq-batch-mailer
-```
+This mailer was built for procurement work at [VISCONSULT](https://vis-consult.eu), a
+consultancy in Germany. An RFQ round with many suppliers otherwise means copy, paste and
+attach by hand; this script does the round from one CSV, one letter template and one
+specification sheet, and leaves a log that can be checked afterwards. We publish it because
+small purchasing teams run into the same problem.
 
-[Quick start →](#quick-start)
+Issues and pull requests are welcome here. If you want help with RFQ automation or with AI
+in procurement, contact us through the website.
+
+## License
+
+MIT, see [LICENSE](LICENSE).
