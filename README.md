@@ -1,4 +1,10 @@
+<img src="docs/banner.svg" width="100%" alt="RFQ Batch Mailer banner">
+
 # jmvis-rfq-batch-mailer
+
+Built and maintained by [VISCONSULT](https://vis-consult.eu), a consultancy in Germany that
+applies AI in procurement, supply chain and operations. MIT licensed, Python.
+
 Send personalized RFQ emails with two attachments:
 - A personalized cover letter (DOCX per recipient, converted to PDF)
 - An Excel sheet with item specifications for price entry
