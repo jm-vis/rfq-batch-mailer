@@ -1,9 +1,9 @@
 <img src="docs/banner.svg" width="100%" alt="RFQ Batch Mailer banner">
 
-# jmvis-rfq-batch-mailer
+# RFQ Batch Mailer
 
-[![Release](https://img.shields.io/github/v/release/jm-vis/jmvis-rfq-batch-mailer?display_name=tag)](https://github.com/jm-vis/jmvis-rfq-batch-mailer/releases)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/jm-vis/jmvis-rfq-batch-mailer/blob/main/LICENSE)
+[![Release](https://img.shields.io/github/v/release/jm-vis/rfq-batch-mailer?display_name=tag)](https://github.com/jm-vis/rfq-batch-mailer/releases)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/jm-vis/rfq-batch-mailer/blob/main/LICENSE)
 
 Built and maintained by [VISCONSULT](https://vis-consult.eu), a consultancy in Germany that
 applies AI in procurement, supply chain and operations. MIT licensed, Python, one script.
